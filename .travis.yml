@@ -10,6 +10,7 @@ notifications:
   email: true
 script:
   - npm run validate
+skip_cleanup: true
 after_success:
   - npm run report-coverage
   - npx semantic-release
