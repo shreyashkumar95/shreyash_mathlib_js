@@ -3,3 +3,4 @@ dist/
 explore/
 .cache/
 .env
+coverage/

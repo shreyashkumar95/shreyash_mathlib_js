@@ -14,7 +14,9 @@
     "build": "webpack --mode production",
     "validate": "run-p lint test build",
     "commit": "cz",
-    "semantic-release": "semantic-release"
+    "semantic-release": "env-cmd -f ./.env semantic-release",
+    "coverage": "npm t -- lib --coverage --collectCoverageFrom='lib/**.js' --coverageDirectory='coverage'",
+    "report-coverage": "cat ./coverage/lcov.info | codecov"
   },
   "keywords": [],
   "author": "Shreyash <hello@webdevcaptain.com>",
@@ -41,5 +43,15 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/shreyashkumar95/shreyash_mathlib.git"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 10
+      }
+    }
   }
 }
