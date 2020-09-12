@@ -12,7 +12,7 @@
     "test": "jest",
     "lint": "eslint lib",
     "build": "webpack --mode production",
-    "validate": "run-p lint test build",
+    "validate": "run-p lint test build coverage",
     "commit": "cz",
     "semantic-release": "env-cmd -f ./.env semantic-release",
     "coverage": "npm t -- lib --coverage --collectCoverageFrom='lib/**.js' --coverageDirectory='coverage'",
